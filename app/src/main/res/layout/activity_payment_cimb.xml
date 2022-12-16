@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_frame"
+    tools:context=".PaymentCIMB">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="96.71dp"
+            app:navigationIcon="@drawable/back_white"
+            app:buttonGravity="center_vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="138dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|top"
+                    android:text="@string/payment_Text"
+                    android:textSize="20dp"
+                    android:textAppearance="@style/nu_exb_16"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="735dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="344dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17dp"
+                android:background="@color/white"
+                android:elevation="4dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="1dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="33dp"
+                        android:background="@drawable/rectangle_red"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="31dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/total_payment_Text"
+                        android:textAppearance="@style/lato_12"
+                        android:textColor="#585858"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvTotalCost"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="31dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="39dp"
+                        android:text="@string/total_cost"
+                        android:textColor="#FF371C"
+                        android:textAppearance="@style/nu_exb_22"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <View
+                        android:layout_width="344dp"
+                        android:layout_height="1dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="42dp"
+                        android:background="@drawable/border_line"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="288dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="31dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="85dp"
+                        android:text="@string/select_payment_Text"
+                        android:textAppearance="@style/lato_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="345dp"
+                android:layout_height="488dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="147dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_width="65dp"
+                        android:layout_height="10dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="457dp"
+                        android:background="@drawable/cimb_niaga_logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="26.13dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="112dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="18.51dp"
+                        android:text="@string/cimb"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <View
+                        android:layout_width="344dp"
+                        android:layout_height="1dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="428dp"
+                        android:background="@drawable/border_line"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="26.13dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="84.93dp"
+                        android:text="@string/bank_1"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="263dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="117dp"
+                        android:text="@string/bank_2"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/the_cashier"
+                        android:layout_width="163dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="148.09dp"
+                        android:text="@string/bank_3"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="344dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="181dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/layout_frame">
+
+                        <TextView
+                            android:id="@+id/AlfamartCode"
+                            android:layout_width="91dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="127dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/payment_code"
+                            android:textAppearance="@style/nu_exb_14"
+                            android:textColor="#FF371C"
+                            android:gravity="top"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="287dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="254dp"
+                        android:text="@string/bank_4"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="344dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="325dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/layout_frame">
+
+                        <TextView
+                            android:layout_width="95dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="127dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/total_cost"
+                            android:textAppearance="@style/nu_exb_14"
+                            android:textColor="#E94852"
+                            android:gravity="top"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="287dp"
+                        android:layout_height="52.27dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="398dp"
+                        android:text="@string/bank_5"
+                        android:textAppearance="@style/lato_bold_12"
+                        android:textColor="#808080"
+                        android:lineSpacingExtra="10sp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/buttonVerifyPayment"
+                android:onClick="VerifyPayment"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="653dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_prim"
+                android:elevation="25dp"
+                android:gravity="center"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/verify_payment_Text"
+                android:textAppearance= "@style/nu_exb_12"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

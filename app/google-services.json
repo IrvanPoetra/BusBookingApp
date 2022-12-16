@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112501649820",
+    "project_id": "busbookingapp-3a4e9",
+    "storage_bucket": "busbookingapp-3a4e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112501649820:android:4a7983c95e952fc2939859",
+        "android_client_info": {
+          "package_name": "com.vanpoetra.app.fproject4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112501649820-10em894c28nj5qns83hqpfu751m24d3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJlz4Ts3ziRA-w-UyOohUGRw9dveB_2ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112501649820-10em894c28nj5qns83hqpfu751m24d3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
