@@ -4,7 +4,7 @@ Final Project Studi Independen Hacktiv8 by Merdeka Belajar Kampus Merdeka
 
 Akun Sign (untuk mentor): 
 
-- Username : Hactiv8
+- Email : hakctiv8@gmail.com
 
 - Password : finalprojek4
 
