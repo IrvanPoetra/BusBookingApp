@@ -14,9 +14,10 @@ public class UserBookingDetail {
     public String dateArrival;
     public String timeDeparture;
     public String timeArrival;
-    public String price;
+    public String travelTime;
+    public String totalPrice;
 
-    public UserBookingDetail(String userName, String userPhone, String seatCount, String poName, String busNo, String cityDeparture, String cityArrival, String terminalDeparture, String terminalArrival, String dateDeparture, String dateArrival, String timeDeparture, String timeArrival, String price) {
+    public UserBookingDetail(String userName, String userPhone, String seatCount, String poName, String busNo, String cityDeparture, String cityArrival, String terminalDeparture, String terminalArrival, String dateDeparture, String dateArrival, String timeDeparture, String timeArrival, String travelTime, String totalPrice) {
         this.userName = userName;
         this.userPhone = userPhone;
         this.seatCount = seatCount;
@@ -30,7 +31,8 @@ public class UserBookingDetail {
         this.dateArrival = dateArrival;
         this.timeDeparture = timeDeparture;
         this.timeArrival = timeArrival;
-        this.price = price;
+        this.travelTime = travelTime;
+        this.totalPrice = totalPrice;
     }
 
     public String getUserName() {
@@ -137,11 +139,19 @@ public class UserBookingDetail {
         this.timeArrival = timeArrival;
     }
 
-    public String getPrice() {
-        return price;
+    public String getTravelTime() {
+        return travelTime;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setTravelTime(String travelTime) {
+        this.travelTime = travelTime;
+    }
+
+    public String getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }

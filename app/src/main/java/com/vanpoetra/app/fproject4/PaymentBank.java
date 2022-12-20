@@ -8,9 +8,17 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class PaymentBank extends AppCompatActivity {
 
     Toolbar toolbar;
+    DatabaseReference databaseReference;
+    FirebaseAuth mAuth;
+    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +26,9 @@ public class PaymentBank extends AppCompatActivity {
         setContentView(R.layout.activity_payment_bank);
 
         toolbar = findViewById(R.id.tbToolbar);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("");
+        mAuth = FirebaseAuth.getInstance();
 
         setToolbar();
     }
@@ -49,11 +60,13 @@ public class PaymentBank extends AppCompatActivity {
     }
 
     public void SELECTBNI(View view) {
+
         Intent intent = new Intent(PaymentBank.this, PaymentBNI.class);
         startActivity(intent);
     }
 
     public void SELECTCIMB(View view) {
+
         Intent intent = new Intent(PaymentBank.this, PaymentCIMB.class);
         startActivity(intent);
     }

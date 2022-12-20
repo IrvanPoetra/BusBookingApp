@@ -13,11 +13,21 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class PaymentAlfamart extends AppCompatActivity {
 
     Toolbar toolbar;
+    TextView tvAlfamart;
     ImageButton btnQRCode;
     Dialog nDialog;
+    DatabaseReference databaseReference;
+    FirebaseAuth mAuth;
+    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +35,13 @@ public class PaymentAlfamart extends AppCompatActivity {
         setContentView(R.layout.activity_payment_alfamart);
 
         toolbar = findViewById(R.id.tbToolbar);
+        tvAlfamart = findViewById(R.id.tv_Alfamart);
         btnQRCode = findViewById(R.id.buttonQRCode);
         nDialog = new Dialog(this);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("");
+        mAuth = FirebaseAuth.getInstance();
+
 
         setToolbar();
     }
@@ -76,6 +91,9 @@ public class PaymentAlfamart extends AppCompatActivity {
     }
 
     public void VerifyPayment(View view) {
-        startActivity(new Intent(PaymentAlfamart.this, order.class));
+
+
+        Intent intent = new Intent(PaymentAlfamart.this, order.class);
+        startActivity(intent);
     }
 }

@@ -141,6 +141,9 @@ public class scheedule_list extends AppCompatActivity implements ItemClickListen
         String timeDeparture = bus.getTimeDeparture();
         String timeArrival = bus.getTimeArrival();
         String price = bus.getPrice();
+        String travelTime = bus.getTravelTime();
+
+        String countSeat = getIntent().getStringExtra("SEAT_COUNT");
 
         Intent intent = new Intent(scheedule_list.this,DetailPayment.class);
         intent.putExtra("PO_NAME", poName);
@@ -153,7 +156,9 @@ public class scheedule_list extends AppCompatActivity implements ItemClickListen
         intent.putExtra("DATE_ARR", dateArrival);
         intent.putExtra("TIM_DEP", timeDeparture);
         intent.putExtra("TIME_ARR", timeArrival);
+        intent.putExtra("TRAVELTIME", travelTime);
         intent.putExtra("PRICE", price);
+        intent.putExtra("SEAT_COUNT", countSeat);
         startActivity(intent);
     }
 }
