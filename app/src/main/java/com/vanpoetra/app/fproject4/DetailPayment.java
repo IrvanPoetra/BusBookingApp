@@ -10,10 +10,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,15 +20,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.UUID;
 
 public class DetailPayment extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView btnContinuePayment, tvPOBus, tvBusNo,tvDateDeparture,tvDateArrival,tvCityDeparture,tvCityArrival,tvTimeDeparture,tvTimeArrival,tvTerminalDeparture,tvTerminalArrival,tvPrice;
-    TextView tvName, tvPhone, tvSeats, tvCountTicket, tvTotalPrice, tvTravelTime;
+    TextView tvName, tvPhone, tvSeats, tvCountTicket, tvTotalPrice, tvTravelTime, tvOrderId;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
-    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price;
+    String orderId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price;
 
 
     @Override
@@ -43,6 +40,7 @@ public class DetailPayment extends AppCompatActivity {
         tvName = findViewById(R.id.tv_Name);
         tvPhone = findViewById(R.id.tv_PhoneNumber);
         tvSeats = findViewById(R.id.tv_Seats);
+        tvOrderId = findViewById(R.id.tv_OrderId);
         tvCountTicket = findViewById(R.id.tv_CountTicket);
         tvTotalPrice = findViewById(R.id.tv_TotalPrice);
         tvPOBus = findViewById(R.id.tv_poBus);
@@ -83,7 +81,7 @@ public class DetailPayment extends AppCompatActivity {
             }
         });
 
-        uniqueId = databaseReference.push().getKey();
+        orderId = UUID.randomUUID().toString().substring(0, 7).toUpperCase();
         seatCount= getIntent().getStringExtra("SEAT_COUNT");
         poName = getIntent().getStringExtra("PO_NAME");
         busNo = getIntent().getStringExtra("BUS_NO");
@@ -107,6 +105,7 @@ public class DetailPayment extends AppCompatActivity {
 
         String totalPrices = formatRupiah(Double.valueOf(totalsPrice));
 
+        tvOrderId.setText(orderId);
         tvTotalPrice.setText(totalPrices);
         tvCountTicket.setText(seatCount+" x "+prices);
         tvSeats.setText(seatCount);
@@ -163,26 +162,13 @@ public class DetailPayment extends AppCompatActivity {
 
     public void ContinuePayment (View view) {
 
-        UserBookingDetail userBookingDetail = new UserBookingDetail(userName, userPhone, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, travelTime, totalPrice);
+        OrderDetail orderDetail = new OrderDetail(orderId, userName, userPhone, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, travelTime, totalPrice);
         FirebaseUser user = mAuth.getCurrentUser();
-        databaseReference.child("Users").child(user.getUid()).child("Order").child(uniqueId).setValue(userBookingDetail);
+        databaseReference.child("Users").child(user.getUid()).child("Order").child(orderId).setValue(orderDetail);
 
         Intent intent = new Intent(DetailPayment.this, PaymentMethod.class);
-        intent.putExtra("USER_NAME", userName);
-        intent.putExtra("USER_PHONE", userPhone);
-        intent.putExtra("PO_NAME", poName);
-        intent.putExtra("BUS_NO", busNo);
-        intent.putExtra("CITY_DEP", cityDeparture);
-        intent.putExtra("CITY_ARR", cityArrival);
-        intent.putExtra("TERM_DEP", terminalDeparture);
-        intent.putExtra("TERM_ARR", terminalArrival);
-        intent.putExtra("DATE_DEP", dateDeparture);
-        intent.putExtra("DATE_ARR", dateArrival);
-        intent.putExtra("TIM_DEP", timeDeparture);
-        intent.putExtra("TIME_ARR", timeArrival);
-        intent.putExtra("TRAVELTIME", travelTime);
+        intent.putExtra("ORDER_ID", orderId);
         intent.putExtra("PRICE", totalPrice);
-        intent.putExtra("SEAT_COUNT", seatCount);
         startActivity(intent);
     }
 

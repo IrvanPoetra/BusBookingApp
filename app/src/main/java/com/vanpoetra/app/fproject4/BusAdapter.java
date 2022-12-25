@@ -51,8 +51,8 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ArtistViewHolder
         holder.tvTimeArrival.setText(bus.timeArrival);
         holder.tvTerminalDeparture.setText(bus.terminalDeparture);
         holder.tvTerminalArrival.setText(bus.terminalArrival);
+        holder.tvTravelTime.setText(bus.travelTime);
         holder.tvPrice.setText(prices);
-        holder.tvRating.setText(bus.rating+"/5");
 
     }
 
@@ -72,7 +72,7 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ArtistViewHolder
 
     class ArtistViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView tvPOBus, tvBusNo,tvDateDeparture,tvDateArrival,tvCityDeparture,tvCityArrival,tvTimeDeparture,tvTimeArrival,tvTerminalDeparture,tvTerminalArrival,tvPrice, tvRating;
+        TextView tvPOBus,tvBusNo,tvDateDeparture,tvDateArrival,tvCityDeparture,tvCityArrival,tvTimeDeparture,tvTimeArrival,tvTerminalDeparture,tvTerminalArrival,tvPrice,tvTravelTime;
 
         public ArtistViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,8 +87,8 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ArtistViewHolder
             tvTimeArrival = itemView.findViewById(R.id.time_arrival);
             tvTerminalDeparture = itemView.findViewById(R.id.terminal_departure);
             tvTerminalArrival = itemView.findViewById(R.id.terminal_arrival);
+            tvTravelTime = itemView.findViewById(R.id.travel_time);
             tvPrice = itemView.findViewById(R.id.price);
-            tvRating = itemView.findViewById(R.id.rating);
 
             itemView.setTag(itemView);
             itemView.setOnClickListener(this);

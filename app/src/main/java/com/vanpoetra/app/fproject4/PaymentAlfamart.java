@@ -18,16 +18,16 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PaymentAlfamart extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView tvAlfamart;
+    TextView tvAlfamart, tvAlfamartCode;
     ImageButton btnQRCode;
     Dialog nDialog;
-    DatabaseReference databaseReference;
-    FirebaseAuth mAuth;
-    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price;
-
+    String price, orderId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +36,24 @@ public class PaymentAlfamart extends AppCompatActivity {
 
         toolbar = findViewById(R.id.tbToolbar);
         tvAlfamart = findViewById(R.id.tv_Alfamart);
+        tvAlfamartCode = findViewById(R.id.tv_AlfamartCode);
         btnQRCode = findViewById(R.id.buttonQRCode);
         nDialog = new Dialog(this);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("");
-        mAuth = FirebaseAuth.getInstance();
+        price = getIntent().getStringExtra("PRICE");
+        orderId = getIntent().getStringExtra("ORDER_ID");
 
+        String totalCost = formatRupiah(Double.valueOf(price));
+        tvAlfamartCode.setText(orderId);
+        tvAlfamart.setText(totalCost);
 
         setToolbar();
+    }
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
     }
 
     private void setToolbar() {

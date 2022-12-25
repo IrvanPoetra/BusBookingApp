@@ -84,7 +84,7 @@
                         />
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="100dp"
                         android:layout_height="24dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="31dp"
@@ -101,7 +101,7 @@
 
                     <TextView
                         android:id="@+id/tv_Alfamart"
-                        android:layout_width="150dp"
+                        android:layout_width="300dp"
                         android:layout_height="30dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="31dp"
@@ -172,7 +172,7 @@
                         app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
-                        android:layout_width="49dp"
+                        android:layout_width="70dp"
                         android:layout_height="26.13dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="79dp"
@@ -199,7 +199,7 @@
                         />
 
                     <TextView
-                        android:layout_width="200dp"
+                        android:layout_width="290dp"
                         android:layout_height="26.13dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="30dp"
@@ -215,7 +215,7 @@
                         />
 
                     <TextView
-                        android:layout_width="263dp"
+                        android:layout_width="290dp"
                         android:layout_height="26dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="30dp"
@@ -232,7 +232,7 @@
 
                     <TextView
                         android:id="@+id/the_cashier"
-                        android:layout_width="263dp"
+                        android:layout_width="280dp"
                         android:layout_height="52.27dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="30dp"
@@ -259,18 +259,18 @@
                         android:background="@drawable/layout_frame">
 
                         <TextView
-                            android:id="@+id/AlfamartCode"
+                            android:id="@+id/tv_AlfamartCode"
                             android:layout_width="91dp"
                             android:layout_height="19dp"
                             android:layout_alignParentStart="true"
-                            android:layout_marginStart="127dp"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="15dp"
                             android:text="@string/payment_code"
                             android:textAppearance="@style/nu_exb_14"
                             android:textColor="#FF371C"
-                            android:gravity="top"
+                            android:gravity="center|top"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             />
 
@@ -293,7 +293,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                     
                     <TextView
-                        android:layout_width="287dp"
+                        android:layout_width="290dp"
                         android:layout_height="52.27dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="30dp"
@@ -309,7 +309,7 @@
                         />
 
                     <TextView
-                        android:layout_width="287dp"
+                        android:layout_width="290dp"
                         android:layout_height="52.27dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="30dp"

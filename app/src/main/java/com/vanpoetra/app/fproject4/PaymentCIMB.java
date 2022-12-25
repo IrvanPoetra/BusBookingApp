@@ -14,14 +14,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PaymentCIMB extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView tvCIMB;
-    DatabaseReference databaseReference;
-    FirebaseAuth mAuth;
-    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival;
-
+    TextView tvCIMB, tvTotalCost, tvCIMBCode;
+    String price, orderId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,25 @@ public class PaymentCIMB extends AppCompatActivity {
 
         toolbar = findViewById(R.id.tbToolbar);
         tvCIMB = findViewById(R.id.tv_CIMB);
+        tvTotalCost = findViewById(R.id.tv_TotalCIMB);
+        tvCIMBCode = findViewById(R.id.tv_CIMBCode);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("");
-        mAuth = FirebaseAuth.getInstance();
+        price = getIntent().getStringExtra("PRICE");
+        orderId = getIntent().getStringExtra("ORDER_ID");
+
+        String totalCost = formatRupiah(Double.valueOf(price));
+        tvTotalCost.setText(totalCost);
+        tvCIMB.setText(totalCost);
+        tvCIMBCode.setText(orderId);
+
 
         setToolbar();
+    }
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
     }
 
     private void setToolbar() {

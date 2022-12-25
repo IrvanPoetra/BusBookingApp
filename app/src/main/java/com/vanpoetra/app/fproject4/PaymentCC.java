@@ -14,14 +14,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PaymentCC extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView tvCC;
-    DatabaseReference databaseReference;
-    FirebaseAuth mAuth;
-    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival;
-
+    String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +31,19 @@ public class PaymentCC extends AppCompatActivity {
         toolbar = findViewById(R.id.tbToolbar);
         tvCC = findViewById(R.id.tv_CC);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("");
-        mAuth = FirebaseAuth.getInstance();
+        price = getIntent().getStringExtra("PRICE");
+
+        String totalCost = formatRupiah(Double.valueOf(price));
+        tvCC.setText(totalCost);
 
         setToolbar();
 
+    }
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
     }
 
     private void setToolbar() {

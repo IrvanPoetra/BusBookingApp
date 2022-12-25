@@ -84,7 +84,7 @@
                         />
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="100dp"
                         android:layout_height="24dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="31dp"
@@ -101,7 +101,7 @@
 
                     <TextView
                         android:id="@+id/tv_BNI"
-                        android:layout_width="150dp"
+                        android:layout_width="300dp"
                         android:layout_height="30dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="31dp"
@@ -175,7 +175,7 @@
                         />
                     
                     <TextView
-                        android:layout_width="120dp"
+                        android:layout_width="140dp"
                         android:layout_height="26.13dp"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="81dp"
@@ -234,8 +234,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/the_cashier"
-                        android:layout_width="163dp"
+                        android:layout_width="180dp"
                         android:layout_height="24dp"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="30dp"
@@ -261,18 +260,18 @@
                         android:background="@drawable/layout_frame">
 
                         <TextView
-                            android:id="@+id/AlfamartCode"
+                            android:id="@+id/tv_BNICODE"
                             android:layout_width="91dp"
                             android:layout_height="19dp"
                             android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="127dp"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="15dp"
                             android:text="230719-0001"
                             android:textAppearance="@style/nu_exb_14"
                             android:textColor="#FF371C"
-                            android:gravity="top"
+                            android:gravity="center|top"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             />
 
@@ -306,17 +305,18 @@
                         android:background="@drawable/layout_frame">
 
                         <TextView
-                            android:layout_width="95dp"
+                            android:id="@+id/tv_TotalCostBNI"
+                            android:layout_width="300dp"
                             android:layout_height="19dp"
                             android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="127dp"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="15dp"
                             android:text="@string/total_cost"
                             android:textAppearance="@style/nu_exb_14"
                             android:textColor="#E94852"
-                            android:gravity="top"
+                            android:gravity="center|top"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             />
 

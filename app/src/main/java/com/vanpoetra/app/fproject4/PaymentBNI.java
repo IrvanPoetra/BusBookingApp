@@ -14,28 +14,42 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PaymentBNI extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView tvBNI;
-    DatabaseReference databaseReference;
-    FirebaseAuth mAuth;
-    String uniqueId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival;
-
+    TextView tvBNI, tvTotalCost, tvBNICode;
+    String price, orderId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_bni);
 
+
         toolbar = findViewById(R.id.tbToolbar);
         tvBNI = findViewById(R.id.tv_BNI);
+        tvTotalCost = findViewById(R.id.tv_TotalCostBNI);
+        tvBNICode = findViewById(R.id.tv_BNICODE);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("");
-        mAuth = FirebaseAuth.getInstance();
+        price = getIntent().getStringExtra("PRICE");
+        orderId = getIntent().getStringExtra("ORDER_ID");
+
+        String totalCost = formatRupiah(Double.valueOf(price));
+        tvTotalCost.setText(totalCost);
+        tvBNI.setText(totalCost);
+        tvBNICode.setText(orderId);
 
 
         setToolbar();
+    }
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
     }
 
     private void setToolbar() {

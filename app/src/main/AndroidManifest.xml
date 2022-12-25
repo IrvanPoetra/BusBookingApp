@@ -42,7 +42,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".order_detail"
+            android:name=".ticket_detail"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

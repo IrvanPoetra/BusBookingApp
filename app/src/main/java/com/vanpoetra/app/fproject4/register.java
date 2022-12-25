@@ -62,7 +62,7 @@ public class register extends AppCompatActivity {
                         if (inputPhone.length() == 12) {
                             if (!TextUtils.isEmpty(inputPass)) {
                                 if (!TextUtils.isEmpty(inputConPass)) {
-                                    if (inputPass.equals(inputPass)) {
+                                    if (inputPass.equals(inputConPass)) {
                                         SignUpUser();
                                     } else {
                                         eTConpass.setError("Konfirmasi Password and Password harus sama.");

@@ -9,21 +9,40 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PaymentMethod extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView btnBank, btnAlfamart;
+    TextView btnBank, btnAlfamart, tvTotalCost;
+    String price, orderId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
 
+        tvTotalCost = findViewById(R.id.tv_TotalCost);
         toolbar = findViewById(R.id.tbToolbar);
         btnBank = findViewById(R.id.selectBank);
         btnAlfamart = findViewById(R.id.selectRetail);
 
+        price = getIntent().getStringExtra("PRICE");
+        orderId = getIntent().getStringExtra("ORDER_ID");
+
+        String totalCost = formatRupiah(Double.valueOf(price));
+        tvTotalCost.setText(totalCost);
+
+
+
         setToolbar();
+    }
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
     }
 
     private void setToolbar() {
@@ -54,16 +73,22 @@ public class PaymentMethod extends AppCompatActivity {
 
     public void SELECTCC(View view) {
         Intent intent = new Intent(PaymentMethod.this, PaymentCC.class);
+        intent.putExtra("ORDER_ID", orderId);
+        intent.putExtra("PRICE", price);
         startActivity(intent);
     }
 
     public void SELECTBANK(View view) {
         Intent intent = new Intent(PaymentMethod.this, PaymentBank.class);
+        intent.putExtra("ORDER_ID", orderId);
+        intent.putExtra("PRICE", price);
         startActivity(intent);
     }
 
     public void SELECTALFAMART(View view) {
         Intent intent = new Intent(PaymentMethod.this, PaymentAlfamart.class);
+        intent.putExtra("ORDER_ID", orderId);
+        intent.putExtra("PRICE", price);
         startActivity(intent);
     }
 }
