@@ -1,5 +1,7 @@
 package com.vanpoetra.app.fproject4;
 
+import java.util.Map;
+
 public class OrderDetail {
 
     public String orderID;
@@ -18,8 +20,9 @@ public class OrderDetail {
     public String timeArrival;
     public String travelTime;
     public String totalPrice;
+    public String time;
 
-    public OrderDetail(String orderID, String userName, String userPhone, String seatCount, String poName, String busNo, String cityDeparture, String cityArrival, String terminalDeparture, String terminalArrival, String dateDeparture, String dateArrival, String timeDeparture, String timeArrival, String travelTime, String totalPrice) {
+    public OrderDetail(String orderID, String userName, String userPhone, String seatCount, String poName, String busNo, String cityDeparture, String cityArrival, String terminalDeparture, String terminalArrival, String dateDeparture, String dateArrival, String timeDeparture, String timeArrival, String travelTime, String totalPrice, String time) {
         this.orderID = orderID;
         this.userName = userName;
         this.userPhone = userPhone;
@@ -36,5 +39,6 @@ public class OrderDetail {
         this.timeArrival = timeArrival;
         this.travelTime = travelTime;
         this.totalPrice = totalPrice;
+        this.time = time;
     }
 }

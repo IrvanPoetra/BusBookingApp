@@ -75,7 +75,7 @@ public class PaymentCC extends AppCompatActivity {
     public void VerifyPayment(View view) {
 
 
-        Intent intent = new Intent(PaymentCC.this, order.class);
+        Intent intent = new Intent(PaymentCC.this, Home.class);
         startActivity(intent);
     }
 }

@@ -103,7 +103,7 @@ public class PaymentAlfamart extends AppCompatActivity {
     public void VerifyPayment(View view) {
 
 
-        Intent intent = new Intent(PaymentAlfamart.this, order.class);
+        Intent intent = new Intent(PaymentAlfamart.this, Home.class);
         startActivity(intent);
     }
 }

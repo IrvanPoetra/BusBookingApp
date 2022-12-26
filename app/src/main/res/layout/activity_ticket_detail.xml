@@ -23,38 +23,42 @@
             app:navigationIcon="@drawable/ic_back"
             app:buttonGravity="center_vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="110dp"
+                android:layout_height="24dp"
                 android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/complete_bo"
-                    android:layout_width="99dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="70dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="39dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="Ticket Detail"
                     android:textAppearance="@style/nu_exb_16"
-                    android:textColor="#3D3D3D"/>
+                    android:textColor="#3D3D3D"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="25dp"
+                android:layout_height="28dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="30dp">
 
                 <ImageButton
                     android:id="@+id/buttonQRCode"
                     android:onClick="SHOWQR"
-                    android:layout_width="15dp"
-                    android:layout_height="18dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="290dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="39dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/qrcode_logo"
                     android:gravity="center_horizontal|center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     />
-
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -76,32 +80,31 @@
                 android:layout_height="150dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="44.29dp"
                 android:background="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <View
-                    android:id="@+id/rectangle3"
                     android:layout_width="4dp"
                     android:layout_height="36dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="33dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/rectangle_red"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
 
                 <TextView
-                    android:id="@+id/john_doe_"
-                    android:layout_width="97dp"
+                    android:id="@+id/tv_NameTicket"
+                    android:layout_width="300dp"
                     android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="39dp"
+                    android:layout_marginTop="30dp"
                     android:fontFamily="@font/nunito_extrabold"
                     android:gravity="top"
                     android:text="@string/passanger_name"
@@ -111,44 +114,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="288dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/view_rate"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="25dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="1/5"
-                    android:textColor="@color/red"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
 
                 <View
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="40dp"
-                    android:background="@drawable/star_red"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/borderline"
                     android:layout_width="344dp"
                     android:layout_height="1dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="-1dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="68dp"
+                    android:layout_marginBottom="30dp"
                     android:background="@drawable/border_line"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -156,8 +129,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/name"
-                    android:layout_width="35dp"
+                    android:layout_width="45dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -173,8 +145,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/phone_numbe"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
@@ -191,8 +162,8 @@
                     />
 
                 <TextView
-                    android:id="@+id/phone_number"
-                    android:layout_width="93dp"
+                    android:id="@+id/tv_PhoneTicket"
+                    android:layout_width="105dp"
                     android:layout_height="19dp"
                     android:fontFamily="@font/nunito_extrabold"
                     android:layout_alignParentLeft="true"
@@ -208,8 +179,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/seats"
-                    android:layout_width="29dp"
+                    android:layout_width="40dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="150dp"
@@ -226,8 +196,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/ticketstatus"
-                    android:layout_width="74dp"
+                    android:layout_width="80dp"
                     android:layout_height="23dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
@@ -243,8 +212,8 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/seats_count"
-                    android:layout_width="9dp"
+                    android:id="@+id/tv_SeatsTicket"
+                    android:layout_width="20dp"
                     android:layout_height="19dp"
                     android:fontFamily="@font/nunito_extrabold"
                     android:layout_alignParentLeft="true"
@@ -260,22 +229,20 @@
                     />
 
                 <TextView
-                    android:id="@+id/time_arrival5"
-                    android:layout_width="46dp"
+                    android:layout_width="50dp"
                     android:layout_height="19dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="96dp"
                     android:layout_marginEnd="12dp"
                     android:gravity="top"
-                    android:text="Issued"
+                    android:text="Paid"
                     android:textColor="@color/red"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
-                    android:id="@+id/time_arrival4"
                     android:layout_width="22dp"
                     android:layout_height="19dp"
                     android:layout_marginTop="96dp"
@@ -291,14 +258,13 @@
                 android:layout_height="282dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="212dp"
                 android:background="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <View
-                    android:id="@+id/rectangle_3"
                     android:layout_width="4dp"
                     android:layout_height="36dp"
                     android:layout_alignParentLeft="true"
@@ -309,7 +275,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/po_name"
                     android:layout_width="53dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
@@ -318,7 +283,7 @@
                     android:layout_marginTop="15dp"
                     android:gravity="top"
                     android:lineSpacingExtra="10sp"
-                    android:text="@string/po_name"
+                    android:text="PO Name"
                     android:textAppearance="@style/lato_12"
                     android:textColor="#D8D8D8"
                     android:translationY="-4.8sp"
@@ -326,8 +291,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/sempati_sta"
-                    android:layout_width="99dp"
+                    android:id="@+id/tv_poBusTicket"
+                    android:layout_width="190dp"
                     android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -341,8 +306,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/bus_no_"
-                    android:layout_width="40dp"
+                    android:layout_width="50dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -358,8 +322,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/p_9123_nn"
-                    android:layout_width="60dp"
+                    android:id="@+id/tv_BusNoTicket"
+                    android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -375,8 +339,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/schedule"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -392,8 +355,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/time_departure"
-                    android:layout_width="38dp"
+                    android:id="@+id/tv_TimeDepartureTicket"
+                    android:layout_width="45dp"
                     android:layout_height="19dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -407,8 +370,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/time_arrival"
-                    android:layout_width="38dp"
+                    android:id="@+id/tv_TimeArrivalTicket"
+                    android:layout_width="45dp"
                     android:layout_height="19dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -422,8 +385,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/time_arrival6"
-                    android:layout_width="81dp"
+                    android:id="@+id/tv_CityArrivalTicket"
+                    android:layout_width="130dp"
                     android:layout_height="18dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -437,8 +400,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/estimated_t"
-                    android:layout_width="85dp"
+                    android:layout_width="100dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -454,8 +416,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/h45m"
-                    android:layout_width="55dp"
+                    android:id="@+id/tv_TravelTimeTicket"
+                    android:layout_width="80dp"
                     android:layout_height="19dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -469,40 +431,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/seat_no"
-                    android:layout_width="33dp"
-                    android:layout_height="19dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="224dp"
-                    android:layout_marginTop="220dp"
-                    android:gravity="top"
-                    android:text="@string/seat_no"
-                    android:textAppearance="@style/nu_exb_14"
-                    android:textColor="#585858"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/seat_no_"
-                    android:layout_width="42dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="224dp"
-                    android:layout_marginTop="192dp"
-                    android:gravity="top"
-                    android:lineSpacingExtra="10sp"
-                    android:text="@string/seat_no_Text"
-                    android:textAppearance="@style/lato_12"
-                    android:textColor="#D8D8D8"
-                    android:translationY="-4.8sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/terminal_ba"
-                    android:layout_width="110dp"
+                    android:id="@+id/tv_TerminalArrivalTicket"
+                    android:layout_width="150dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -518,7 +448,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/date_arrival"
+                    android:id="@+id/tv_DateArrivalTicket"
                     android:layout_width="65dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
@@ -535,8 +465,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/city_departure2"
-                    android:layout_width="53dp"
+                    android:id="@+id/tv_CityDepartureTicket"
+                    android:layout_width="130dp"
                     android:layout_height="19dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -550,8 +480,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/terminal_am"
-                    android:layout_width="90dp"
+                    android:id="@+id/tv_TerminalDepartureTicket"
+                    android:layout_width="140dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -567,8 +497,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/jul_2019"
-                    android:layout_width="65dp"
+                    android:id="@+id/tv_DateDepartureTicket"
+                    android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -590,14 +520,13 @@
                 android:layout_height="49dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="550dp"
                 android:background="@drawable/rectangle_cancel"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/total"
                     android:layout_width="0dp"
                     android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
@@ -613,69 +542,66 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/rp332_333_0"
-                    android:layout_width="0dp"
+                    android:id="@+id/tv_TotalCostTicket"
+                    android:layout_width="200dp"
                     android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="207dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_marginTop="15dp"
-                    android:gravity="top"
+                    android:gravity="end|top"
                     android:text="@string/total_cost"
                     android:textAppearance="@style/nu_exb_16"
                     android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:id="@+id/rectangle5"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="342dp"
                 android:layout_height="39dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:background="@drawable/ticketbar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.362"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="6dp"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/book_no_2"
-                android:layout_width="154dp"
-                android:layout_height="17dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="196dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:lineSpacingExtra="10sp"
-                android:text="Book No. 230719-0001"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:translationY="-4.8sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_TicketCode"
+                    android:layout_width="170dp"
+                    android:layout_height="17dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="end|top"
+                    android:lineSpacingExtra="10sp"
+                    android:text="Book No. FHG33CJ"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/jul_2019_2"
-                android:layout_width="123dp"
-                android:layout_height="23dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:lineSpacingExtra="10sp"
-                android:text="23 JUL 2019. 17:35"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:translationY="-4.8sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_DateTicket"
+                    android:layout_width="170dp"
+                    android:layout_height="23dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="10sp"
+                    android:text="23 JUL 2019. 17:35"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

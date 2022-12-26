@@ -80,7 +80,7 @@ public class PaymentCIMB extends AppCompatActivity {
     public void VerifyPayment(View view) {
 
 
-        Intent intent = new Intent(PaymentCIMB.this, order.class);
+        Intent intent = new Intent(PaymentCIMB.this, Home.class);
         startActivity(intent);
     }
 }

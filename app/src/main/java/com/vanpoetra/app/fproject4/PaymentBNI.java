@@ -81,7 +81,7 @@ public class PaymentBNI extends AppCompatActivity {
     public void VerifyPayment(View view) {
 
 
-        Intent intent = new Intent(PaymentBNI.this, order.class);
+        Intent intent = new Intent(PaymentBNI.this, Home.class);
         startActivity(intent);
     }
 }

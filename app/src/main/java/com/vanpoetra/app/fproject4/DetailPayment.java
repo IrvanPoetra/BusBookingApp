@@ -16,9 +16,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -29,7 +33,7 @@ public class DetailPayment extends AppCompatActivity {
     TextView tvName, tvPhone, tvSeats, tvCountTicket, tvTotalPrice, tvTravelTime, tvOrderId;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
-    String orderId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price;
+    String orderId, userName, userPhone, totalPrice, travelTime, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, price, time;
 
 
     @Override
@@ -161,8 +165,10 @@ public class DetailPayment extends AppCompatActivity {
 
 
     public void ContinuePayment (View view) {
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.US);
+        time = dateFormat.format(Calendar.getInstance().getTime());
 
-        OrderDetail orderDetail = new OrderDetail(orderId, userName, userPhone, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, travelTime, totalPrice);
+        OrderDetail orderDetail = new OrderDetail(orderId, userName, userPhone, seatCount, poName, busNo, cityDeparture, cityArrival, terminalDeparture, terminalArrival, dateDeparture, dateArrival, timeDeparture, timeArrival, travelTime, totalPrice, time);
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference.child("Users").child(user.getUid()).child("Order").child(orderId).setValue(orderDetail);
 
